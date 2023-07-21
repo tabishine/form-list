@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { NgForm } from "@angular/forms";
 import { ToastController } from "ionic-angular";
 
 @Component({
@@ -22,10 +21,9 @@ export class HomePage {
       return;
     }
 
-    //fake request
-
-    // this.fakePostRequest(this.formData).then(() => {
-    //   this.presentToast('Сохранено');
+    // fake request
+    // this.postRequest(this.formData).then(() => {
+    //   this.presentToast("Сохранено");
     // });
   }
 
@@ -38,6 +36,14 @@ export class HomePage {
       this.formData.duration !== null
     );
   }
+
+  // postRequest(data: any): Promise<void> {
+  //   return new Promise<void>((resolve) => {
+  //     setTimeout(() => {
+  //       resolve();
+  //     }, 2000); 
+  //   });
+  // }
 
   presentToast(message: string) {
     const toast = this.toastCtrl.create({
