@@ -1,14 +1,57 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title> Форма </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <form (ngSubmit)="saveData()">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Название</ion-label>
+        <ion-input
+          type="text"
+          [(ngModel)]="formData.title"
+          required
+          [ngModelOptions]="{ standalone: true }"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Год</ion-label>
+        <ion-input
+          type="number"
+          [(ngModel)]="formData.year"
+          required
+          [ngModelOptions]="{ standalone: true }"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Описание</ion-label>
+        <ion-textarea
+          [(ngModel)]="textInput"
+          rows="5"
+          maxRows="5"
+          [(ngModel)]="formData.description"
+          required
+          [ngModelOptions]="{ standalone: true }"
+        ></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Продолжительность</ion-label>
+        <ion-input
+          type="number"
+          [(ngModel)]="formData.duration"
+          required
+          [ngModelOptions]="{ standalone: true }"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div padding>
+      <button ion-button type="submit" color="primary" block>Сохранить</button>
+    </div>
+  </form>
 </ion-content>

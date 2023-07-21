@@ -1,14 +1,50 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { ToastController } from "ionic-angular";
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: "page-home",
+  templateUrl: "home.html",
 })
 export class HomePage {
+  formData = {
+    title: " ",
+    year: null,
+    description: " ",
+    duration: null,
+  };
 
-  constructor(public navCtrl: NavController) {
+  constructor(private toastCtrl: ToastController) {}
 
+  saveData() {
+    if (!this.isFormValid()) {
+      this.presentToast("Заполните все поля");
+      return;
+    }
+
+    //fake request
+
+    // this.fakePostRequest(this.formData).then(() => {
+    //   this.presentToast('Сохранено');
+    // });
   }
 
+  isFormValid(): boolean {
+    // check if all form fields are filled
+    return (
+      this.formData.title.trim() !== "" &&
+      this.formData.year !== null &&
+      this.formData.description.trim() !== "" &&
+      this.formData.duration !== null
+    );
+  }
+
+  presentToast(message: string) {
+    const toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000,
+      position: "bottom",
+    });
+    toast.present();
+  }
 }
