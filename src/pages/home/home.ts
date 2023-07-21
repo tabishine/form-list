@@ -21,14 +21,13 @@ export class HomePage {
       return;
     }
 
-    // fake request
     // this.postRequest(this.formData).then(() => {
     //   this.presentToast("Сохранено");
     // });
   }
 
   isFormValid(): boolean {
-    // check if all form fields are filled
+    // проверить на заполнение всех полей
     return (
       this.formData.title.trim() !== "" &&
       this.formData.year !== null &&
@@ -37,11 +36,12 @@ export class HomePage {
     );
   }
 
+  // фейковый запрос
   // postRequest(data: any): Promise<void> {
   //   return new Promise<void>((resolve) => {
   //     setTimeout(() => {
   //       resolve();
-  //     }, 2000); 
+  //     }, 2000);
   //   });
   // }
 
