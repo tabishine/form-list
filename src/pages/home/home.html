@@ -30,7 +30,6 @@
       <ion-item>
         <ion-label stacked>Описание</ion-label>
         <ion-textarea
-          [(ngModel)]="textInput"
           rows="5"
           maxRows="5"
           [(ngModel)]="formData.description"
@@ -40,7 +39,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Продолжительность</ion-label>
+        <ion-label stacked> Продолжительность</ion-label>
         <ion-input
           type="number"
           [(ngModel)]="formData.duration"
