@@ -23,7 +23,7 @@ export class HomePage {
 
     // this.postRequest(this.formData).then(() => {
     //   this.presentToast("Сохранено");
-    // });
+    // }); 
   }
 
   isFormValid(): boolean {
@@ -36,7 +36,7 @@ export class HomePage {
     );
   }
 
-  // фейковый запрос
+  // фейковый запрос Promise
   // postRequest(data: any): Promise<void> {
   //   return new Promise<void>((resolve) => {
   //     setTimeout(() => {
